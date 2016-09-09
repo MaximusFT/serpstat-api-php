@@ -1,6 +1,6 @@
 # serpstat-api-php
 
-Firs release php Class for SerpStat.
+First release php Class for get SerpStat analytic by API.
 
 ## in ToDo
 * Sort
