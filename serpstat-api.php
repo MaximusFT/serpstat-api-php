@@ -65,10 +65,10 @@ class SerpStat
         $url = $this->url.__FUNCTION__.'?query='.$query.'&se='.$se.'&token='.$this->token;
         return json_decode(file_get_contents($url));
     }
-    public function domain_keywords($query = '', $se = '')
+    public function domain_keywords($query = '', $se = '', $filtr = '')
     {
         $se = $this->getSE($se);
-        $url = $this->url.__FUNCTION__.'?query='.$query.'&se='.$se.'&token='.$this->token;
+        $url = $this->url.__FUNCTION__.'?query='.$query.'&se='.$se.'&token='.$this->token.'&'.$filtr;
         return json_decode(file_get_contents($url));
     }
     public function domain_urls($query = '', $se = '')
@@ -79,7 +79,7 @@ class SerpStat
     }
     public function domains_intersection($query = '', $se = '')
     {
-        return false; // Надо разобраться с ошибкой
+        //return false; // Надо разобраться с ошибкой
         $se = $this->getSE($se);
         $url = $this->url.__FUNCTION__.'?query='.$query.'&se='.$se.'&token='.$this->token;
         return json_decode(file_get_contents($url));
@@ -110,10 +110,10 @@ class SerpStat
         return json_decode(file_get_contents($url));
     }
 
-    public function keywords($query = '', $se = '')
+    public function keywords($query = '', $se = '', $filtr = '')
     {
         $se = $this->getSE($se);
-        $url = $this->url.__FUNCTION__.'?query='.$this->toASCII($query).'&se='.$se.'&token='.$this->token;
+        $url = $this->url.__FUNCTION__.'?query='.$this->toASCII($query).'&se='.$se.'&token='.$this->token.'&'.$filtr;
         return json_decode(file_get_contents($url));
     }
     public function keyword_info($query = '', $se = '')
@@ -122,10 +122,10 @@ class SerpStat
         $url = $this->url.__FUNCTION__.'?query='.$this->toASCII($query).'&se='.$se.'&token='.$this->token;
         return json_decode(file_get_contents($url));
     }
-    public function ad_keywords($query = '', $se = '')
+    public function ad_keywords($query = '', $se = '', $filtr = '')
     {
         $se = $this->getSE($se);
-        $url = $this->url.__FUNCTION__.'?query='.$this->toASCII($query).'&se='.$se.'&token='.$this->token;
+        $url = $this->url.__FUNCTION__.'?query='.$this->toASCII($query).'&se='.$se.'&token='.$this->token.'&'.$filtr;
         return json_decode(file_get_contents($url));
     }
 
