@@ -62,7 +62,7 @@ class SerpStat
     public function domain_history($query = '', $se = '')
     {
         $se = $this->getSE($se);
-        $url = $this->url.__FUNCTION__.'?query='.$query.'&se='.$se.'&token='.$this->token;
+        $url = $this->url.__FUNCTION__.'?query='.$query.'&se='.$se.'&token='.$this->token.'&sort=date&order=desc';
         return json_decode(file_get_contents($url));
     }
     public function domain_keywords($query = '', $se = '', $filtr = '')
