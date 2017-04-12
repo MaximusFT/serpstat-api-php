@@ -91,10 +91,10 @@ class SerpStat
         return json_decode(file_get_contents($url));
     }
 
-    public function url_keywords($query = '', $se = '')
+    public function url_keywords($query = '', $se = '', $page_size = '', $page = '')
     {
         $se = $this->getSE($se);
-        $url = $this->url.__FUNCTION__.'?query='.$this->toASCII($query).'&se='.$se.'&token='.$this->token;
+        $url = $this->url.__FUNCTION__.'?query='.$this->toASCII($query).'&se='.$se.'&token='.$this->token.'&page_size='.$page_size.'&page='.$page;
         return json_decode(file_get_contents($url));
     }
     public function url_competitors($query = '', $se = '')
